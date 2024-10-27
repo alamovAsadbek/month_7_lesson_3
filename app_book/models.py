@@ -1,5 +1,6 @@
 from django.db import models
 
+from app_author.models import AuthorModel
 from common.models import BaseModel
 
 
@@ -8,7 +9,7 @@ class BookModel(BaseModel):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.IntegerField()
-    author = models.ManyToManyField('AuthorModel', related_name='books')
+    author = models.ManyToManyField(AuthorModel, related_name='books')
 
     class Meta:
         verbose_name = 'Book'
