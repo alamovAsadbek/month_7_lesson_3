@@ -26,7 +26,8 @@ INSTALLED_APPS = [
 
     # local apps
     'app_book',
-    'app_author'
+    'app_author',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
