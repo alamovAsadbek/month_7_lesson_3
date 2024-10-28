@@ -8,9 +8,8 @@ from .serializer import *
 def AuthorView(request):
     if request.method == 'GET':
         authors = AuthorModel.objects.all()
-        print(authors)
         serializer = AuthorModelSerializer(authors, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=200)
     elif request.method == 'POST':
         serializer = AuthorModelSerializer(data=request.data)
         if serializer.is_valid():
